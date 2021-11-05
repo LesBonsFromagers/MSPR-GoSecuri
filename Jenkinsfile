@@ -10,7 +10,7 @@ pipeline {
         stage('Clean') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
+                //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
 
                 // Run Maven on a Unix agent.
                 sh "mvn clean"
