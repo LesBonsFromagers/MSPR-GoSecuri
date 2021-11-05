@@ -27,4 +27,7 @@ public class Agent {
     public List<String> getToolsList() {
         return toolsList;
     }
+    public String getPhoto() {
+        return photo;
+    }
 }

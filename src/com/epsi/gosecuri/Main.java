@@ -9,5 +9,6 @@ public class Main {
         index.ReadToolsFile();
         index.ReadAgentFile();
         index.CreateIndex();
+        index.CreateAgentPage();
     }
 }
