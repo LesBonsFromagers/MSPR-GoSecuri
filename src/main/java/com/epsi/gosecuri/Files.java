@@ -8,6 +8,7 @@ public class Files {
     private final Map<String, String> toolsList = new HashMap<>();
     private final List<Agent> agents = new ArrayList<>();
 
+    private String path = "src\\main\\java\\com\\epsi\\gosecuri\\assets\\";
     private final String Header = """
             <!doctype html>
             <html lang="fr">
@@ -42,7 +43,7 @@ public class Files {
     //  Add list agent tools with checkbox
     public void ReadStaffListFile(){
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\aca\\Documents\\Java\\Go-Securi_v2\\src\\com\\epsi\\gosecuri\\assets\\staff.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"staff.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
                 this.staffList.add(str);
@@ -55,7 +56,7 @@ public class Files {
 
     public void ReadToolsFile(){
         try{
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\aca\\Documents\\Java\\Go-Securi_v2\\src\\com\\epsi\\gosecuri\\assets\\liste.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"liste.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
                 this.toolsList.put(str.split("\t")[0], str.split("\t")[1]);
@@ -76,7 +77,7 @@ public class Files {
         for (String a : staffList){
             try{
                 toolsListAgent = new ArrayList<>();
-                BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\aca\\Documents\\Java\\Go-Securi_v2\\src\\com\\epsi\\gosecuri\\assets\\agents\\" + a + ".txt"));
+                BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"agents\\" + a + ".txt"));
                 int i = 1;
                 String str;
                 while((str = bufferedReader.readLine()) != null){
@@ -115,8 +116,8 @@ public class Files {
     public void CreateIndex(){
         String agentsList = getAgentListNames();
         try{
-            new FileOutputStream("C:\\Users\\aca\\Documents\\Java\\Go-Securi_v2\\src\\com\\epsi\\gosecuri\\assets\\web\\index.html", false).close();
-            FileWriter writeIndex = new FileWriter("C:\\Users\\aca\\Documents\\Java\\Go-Securi_v2\\src\\com\\epsi\\gosecuri\\assets\\web\\index.html");
+            new FileOutputStream(path+"web\\index.html", false).close();
+            FileWriter writeIndex = new FileWriter(path+"web\\index.html");
             writeIndex.write(Header);
             writeIndex.write(agentsList);
             writeIndex.write(Footer);
@@ -130,8 +131,8 @@ public class Files {
         //String agentTools = getAgentData();
         for (Agent a : agents) {
             try{
-                new FileOutputStream("C:\\Users\\aca\\Documents\\Java\\Go-Securi_v2\\src\\com\\epsi\\gosecuri\\assets\\web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html", false).close();
-                FileWriter writeAgent = new FileWriter("C:\\Users\\aca\\Documents\\Java\\Go-Securi_v2\\src\\com\\epsi\\gosecuri\\assets\\web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html");
+                new FileOutputStream(path+"web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html", false).close();
+                FileWriter writeAgent = new FileWriter(path+"web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html");
                 writeAgent.write(Header);
                 writeAgent.write("<div class=\"col-6\"><h1>"+ a.getSurname()+ " " + a.getName() +"</h1></div>" +
                                  "<div class=\"col-6 \"><img src=\"../images/"+ a.getPhoto() + "\" alt=\"Carte d'identité de "+ a.getSurname()+ " " + a.getName() +"\"></div></div>" +
