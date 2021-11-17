@@ -21,12 +21,15 @@ public class Agent {
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
+
     public List<String> getToolsList() {
         return toolsList;
     }
+
     public String getPhoto() {
         return photo;
     }

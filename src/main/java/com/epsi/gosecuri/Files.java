@@ -8,7 +8,7 @@ public class Files {
     private final Map<String, String> toolsList = new HashMap<>();
     private final List<Agent> agents = new ArrayList<>();
 
-    private String path = "src\\main\\java\\com\\epsi\\gosecuri\\assets\\";
+    private final String path = "src\\main\\java\\com\\epsi\\gosecuri\\assets\\";
     private final String Header = """
             <!doctype html>
             <html lang="fr">
@@ -38,9 +38,7 @@ public class Files {
                     </div>
                 </div>
             </main></body>""".indent(4);
-    //CreateAgentPage
-    //  Add agent data
-    //  Add list agent tools with checkbox
+
     public void ReadStaffListFile(){
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"staff.txt"));
@@ -106,6 +104,7 @@ public class Files {
             }
         }
     }
+
     public String getAgentListNames(){
         String result = "<h1>Liste des agents</h1>";
         for (Agent a : agents) {
@@ -113,6 +112,7 @@ public class Files {
         }
         return result;
     }
+
     public void CreateIndex(){
         String agentsList = getAgentListNames();
         try{
