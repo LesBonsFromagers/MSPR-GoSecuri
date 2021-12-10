@@ -137,12 +137,21 @@ public class Files {
                 writeAgent.write("<div class=\"col-6\"><h1>"+ a.getSurname()+ " " + a.getName() +"</h1></div>" +
                                  "<div class=\"col-6 \"><img src=\"../images/"+ a.getPhoto() + "\" alt=\"Carte d'identité de "+ a.getSurname()+ " " + a.getName() +"\"></div></div>" +
                                  "<div class=\"row\"><div class=\"col\">");
-                for (String tool : a.getToolsList()) {
-                    writeAgent.write( "<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\""+ tool + "\" id=\"id"+tool.substring(0, 4)+"\" checked readonly>\n" +
-                              "  <label class=\"form-check-label\" for=\"id"+tool.substring(0, 4)+"\">\n" +
-                              tool + "\n" +
-                              "  </label></div>");
+                for (String tools : this.toolsList.values()){
+                        if (a.getToolsList().contains(tools)){
+                            writeAgent.write( "<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\""+ tools + "\" id=\"id"+tools.substring(0, 4)+"\" disabled checked readonly>\n" +
+                                    "  <label class=\"form-check-label\" for=\"id"+tools.substring(0, 4)+"\">\n" +
+                                    tools + "\n" +
+                                    "  </label></div>");
+                        }else{
+                            writeAgent.write( "<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\""+ tools + "\" id=\"id"+tools.substring(0, 4)+"\" disabled readonly>\n" +
+                                    "  <label class=\"form-check-label\" for=\"id"+tools.substring(0, 4)+"\">\n" +
+                                    tools + "\n" +
+                                    "  </label></div>");
+                        }
+
                 }
+
                 writeAgent.write(Footer);
                 writeAgent.close();
             } catch (IOException e) {
