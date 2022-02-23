@@ -13,7 +13,7 @@ pipeline {
                 //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
 
                 // Run Maven on a Unix agent.
-                sh "sshpass -p \"root\" ssh root@192.168.116.129"
+                sh "sshpass -p \"root\" ssh root@192.168.1.170"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') {
