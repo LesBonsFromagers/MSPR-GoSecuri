@@ -21,16 +21,16 @@ public class Files {
             </head>
             <body>
                 <main class="container-fluid">
-                    <div class="row">
+                    <div class="row header-container">
                         <div class="col">
-                            <nav class="navbar navbar-light bg-light">
-                              <div class="container-fluid">
+                            <nav class="navbar navbar-light">
+                              <div class="container-fluid img-container">
                                 <a class="navbar-brand" href="index.html"><img src="../images/GoSecuri.PNG" alt="Logo Go Securi"></a>
                               </div>
                             </nav>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row content-container">
                         <div class="col">
             """;
 
@@ -134,18 +134,18 @@ public class Files {
                 new FileOutputStream(path+"web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html", false).close();
                 FileWriter writeAgent = new FileWriter(path+"web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html");
                 writeAgent.write(Header);
-                writeAgent.write("<div class=\"col-6\"><h1>"+ a.getSurname()+ " " + a.getName() +"</h1></div>" +
-                                 "<div class=\"col-6 \"><img src=\"../images/"+ a.getPhoto() + "\" alt=\"Carte d'identité de "+ a.getSurname()+ " " + a.getName() +"\"></div></div>" +
+                writeAgent.write("<div><h1>"+ a.getSurname()+ " " + a.getName() +"</h1></div>" +
+                                 "<div><img src=\"../images/"+ a.getPhoto() + "\" alt=\"Carte d'identité de "+ a.getSurname()+ " " + a.getName() +"\"></div></div>" +
                                  "<div class=\"row\"><div class=\"col\">");
                 for (String tools : this.toolsList.values()){
                         if (a.getToolsList().contains(tools)){
-                            writeAgent.write( "<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\""+ tools + "\" id=\"id"+tools.substring(0, 4)+"\" disabled checked readonly>\n" +
-                                    "  <label class=\"form-check-label\" for=\"id"+tools.substring(0, 4)+"\">\n" +
+                            writeAgent.write( "<div class=\"form-check\"><input class=\"checkbox\" type=\"checkbox\" value=\""+ tools + "\" id=\"id"+tools.substring(0, 4)+"\" disabled checked readonly>\n" +
+                                    "  <label for=\"id"+tools.substring(0, 4)+"\">\n" +
                                     tools + "\n" +
                                     "  </label></div>");
                         }else{
-                            writeAgent.write( "<div class=\"form-check\"><input class=\"form-check-input\" type=\"checkbox\" value=\""+ tools + "\" id=\"id"+tools.substring(0, 4)+"\" disabled readonly>\n" +
-                                    "  <label class=\"form-check-label\" for=\"id"+tools.substring(0, 4)+"\">\n" +
+                            writeAgent.write( "<div class=\"form-check\"><input class=\"checkbox\" type=\"checkbox\" value=\""+ tools + "\" id=\"id"+tools.substring(0, 4)+"\" disabled readonly>\n" +
+                                    "  <label for=\"id"+tools.substring(0, 4)+"\">\n" +
                                     tools + "\n" +
                                     "  </label></div>");
                         }
