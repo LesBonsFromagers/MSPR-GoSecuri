@@ -26,6 +26,10 @@ public class Agent {
         return surname;
     }
 
+    public String getAssignment(){
+        return assignment;
+    }
+
     public List<String> getToolsList() {
         return toolsList;
     }
