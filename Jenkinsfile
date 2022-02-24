@@ -83,7 +83,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'cd /var/www/html/Pipeline-MSPR/; pwd'"
-                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'java -jar target/untitled104-1.0-SNAPSHOT'"
+                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'java -jar target/untitled104-1.0-SNAPSHOT.jar'"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
