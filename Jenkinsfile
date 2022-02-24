@@ -37,7 +37,7 @@ pipeline {
                 
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
-                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/Pipeline-MSPR/ root@192.168.1.170:/mnt/www/html"
+                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/MSPR Folder/Pipeline-MSPR/ root@192.168.1.170:/mnt/www/html"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
@@ -48,7 +48,7 @@ pipeline {
             }
         }
         
-        stage('Sauvegarde') 
+        stage('Compilation') 
         {
             steps 
             {
@@ -56,7 +56,9 @@ pipeline {
                 //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn clean"
+                //sh "mvn clean"
+                
+                sh "java /var/lib/jenkins/workspace/MSPR Folder/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Files.java"
                 
                 //sh "rsync --rsh=\"sshpass -p \"root\" ssh -o StrictHostKeyChecking=no root@192.168.1.170 \" /root/.git/ /backup/"
 
