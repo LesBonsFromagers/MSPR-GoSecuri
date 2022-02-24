@@ -58,7 +58,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
                 
-                sh "java /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Files.java"
+                sh "java /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java"
                 
                 //sh "rsync --rsh=\"sshpass -p \"root\" ssh -o StrictHostKeyChecking=no root@192.168.1.170 \" /root/.git/ /backup/"
 
