@@ -37,7 +37,7 @@ pipeline {
                 
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
-                sh "sshpass -p \"root\" scp /var/lib/jenkins/workspace/Pipeline-MSPR/ root@192.168.1.170:/var/www/html"
+                sh "sshpass -v -p \"root\" scp -v /var/lib/jenkins/workspace/Pipeline-MSPR/ root@192.168.1.170:/var/www/html"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
