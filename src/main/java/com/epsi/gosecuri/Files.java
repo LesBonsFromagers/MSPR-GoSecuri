@@ -135,7 +135,7 @@ public class Files {
                 FileWriter writeAgent = new FileWriter(path+"web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html");
                 writeAgent.write(Header);
                 writeAgent.write("<div><h1>"+ a.getSurname()+ " " + a.getName() +"</h1></div>" +
-                                 "<div><p>"+ a.getAssignment() + "</p></div>" +
+                                 "<div><p>Mission : "+ a.getAssignment() + "</p></div>" +
                                  "<div><img src=\"../images/"+ a.getPhoto() + "\" alt=\"Carte d'identité de "+ a.getSurname()+ " " + a.getName() +"\"></div></div>" +
                                  "<div class=\"checklist_container\"><div class=\"col checklist\">");
                 for (String tools : this.toolsList.values()){
