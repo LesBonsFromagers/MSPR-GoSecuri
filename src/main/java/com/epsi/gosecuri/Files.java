@@ -25,7 +25,7 @@ public class Files {
                         <div class="col">
                             <nav class="navbar navbar-light">
                               <div class="container-fluid img-container">
-                                <a class="navbar-brand" href="index.html"><img src="../images/GoSecuri.PNG" alt="Logo Go Securi"></a>
+                                <a class="navbar-brand logo" href="index.html"><img class="logo" src="../images/GoSecuri.PNG" alt="Logo Go Securi"></a>
                               </div>
                             </nav>
                         </div>
@@ -108,7 +108,7 @@ public class Files {
     public String getAgentListNames(){
         String result = "<h1>Liste des agents</h1>";
         for (Agent a : agents) {
-            result += "<div><a href=\"" + (a.getSurname().charAt(0)+a.getName()).toLowerCase() + ".html\">" + a.getSurname() + " " + a.getName() + "</a>";
+            result += "<div class=\"agent_link_div\"><a class=\"agent_link\" href=\"" + (a.getSurname().charAt(0)+a.getName()).toLowerCase() + ".html\">" + a.getSurname() + " " + a.getName() + "</a></div>";
         }
         return result;
     }
@@ -136,7 +136,7 @@ public class Files {
                 writeAgent.write(Header);
                 writeAgent.write("<div><h1>"+ a.getSurname()+ " " + a.getName() +"</h1></div>" +
                                  "<div><img src=\"../images/"+ a.getPhoto() + "\" alt=\"Carte d'identité de "+ a.getSurname()+ " " + a.getName() +"\"></div></div>" +
-                                 "<div class=\"row\"><div class=\"col\">");
+                                 "<div class=\"checklist_container\"><div class=\"col checklist\">");
                 for (String tools : this.toolsList.values()){
                         if (a.getToolsList().contains(tools)){
                             writeAgent.write( "<div class=\"form-check\"><input class=\"checkbox\" type=\"checkbox\" value=\""+ tools + "\" id=\"id"+tools.substring(0, 4)+"\" disabled checked readonly>\n" +
