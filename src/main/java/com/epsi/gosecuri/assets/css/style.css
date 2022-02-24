@@ -1,0 +1,75 @@
+body{
+    background: rgb(56,156,196);
+    background: linear-gradient(124deg, rgba(56,156,196,1) 43%, rgba(33,71,167,1) 100%);
+    background-attachment: fixed;
+    background-repeat:no-repeat
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+}
+
+.logo {
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+}
+
+.content-container{
+    text-align: center;
+    padding: 40px;
+}
+
+.agent-list{
+    margin-top: 50px;
+    border: solid;
+}
+
+.form-check {
+  text-align:left;
+}
+
+.agent_link{
+    display: inline-block;
+    transition-duration: 0.3s;
+    margin-top: 50px;
+    width: 218px;
+    margin-left: auto;
+    margin-right: auto;
+    /*box-shadow: 0px 0px 22px 9px rgba(89,89,89,0.63);*/
+    box-shadow: 6px 6px 10px 1px rgba(0,0,0,0.7), -6px -6px 10px 1px rgba(255,255,255,0.7);
+    background-color: #ffffff8f;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.agent_link:hover{
+    transition-duration: 0.3s;
+    box-shadow: none;
+    color: #789424;
+}
+
+.checklist{
+    display: grid;
+    justify-content: center;
+    padding: 15px;
+
+    margin-top: 50px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    /*box-shadow: 0px 0px 22px 9px rgba(89,89,89,0.63);*/
+    box-shadow: 6px 6px 10px 1px rgba(0,0,0,0.7), -6px -6px 10px 1px rgba(255,255,255,0.7);
+    background-color: #ffffff8f;
+    border-radius: 15px;
+}
+
+.checklist_container{
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    display: grid;
+}
