@@ -12,42 +12,6 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
-                <configuration>
-                    <source>17</source>
-                    <target>15</target>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <configuration>
-                            <switches>
-                                <switch>
-                                    <packageName>com.epsi.gosecuri</packageName>
-                                    <classname>Main</classname>
-                                    <fields>
-                                        <field>
-                                            <fieldName>DEBUG</fieldName>
-                                            <fieldvalue>true</fieldvalue>
-                                        </field>
-                                    </fields>
-                                </switch>
-                            </switches>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>com.epsi.gosecuri.Main</mainClass>
-                                </manifest>
-                            </archive>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <archive>
