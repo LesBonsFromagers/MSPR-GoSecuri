@@ -19,6 +19,29 @@
                     <target>17</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <switches>
+                                <switch>
+                                    <packageName>com.epsi.gosecuri</packageName>
+                                    <classname>Main</classname>
+                                    <fields>
+                                        <field>
+                                            <fieldName>DEBUG</fieldName>
+                                            <fieldvalue>true</fieldvalue>
+                                        </field>
+                                    </fields>
+                                </switch>
+                            </switches>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
