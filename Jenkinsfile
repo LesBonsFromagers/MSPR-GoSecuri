@@ -74,6 +74,26 @@ pipeline {
             }
         }
         
+        stage('Launch') 
+        {
+            steps 
+            {
+                // Get some code from a GitHub repository
+                //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
+
+                // Run Maven on a Unix agent.
+                sh "cd /var/www/html/Pipeline-MSPR/"
+                sh "java -jar target/MSPR-gosecuri-1.0-SNAPSHOT"
+
+                // To run Maven on a Windows agent, use
+                //dir('Jenkins') 
+                //{
+                //    bat "mvn -Dmaven.test.failure.ignore=true test"
+                //}
+                
+            }
+        }
+        
         stage('Test') 
         {
             steps 
