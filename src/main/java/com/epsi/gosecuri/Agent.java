@@ -26,6 +26,10 @@ public class Agent {
         return surname;
     }
 
+    public String getPassword(){
+        return password;
+    }
+
     public String getAssignment(){
         return assignment;
     }
