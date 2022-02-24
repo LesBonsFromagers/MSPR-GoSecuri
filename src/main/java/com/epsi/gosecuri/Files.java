@@ -140,7 +140,7 @@ public class Files {
                 for (String tools : this.toolsList.values()){
                         if (a.getToolsList().contains(tools)){
                             writeAgent.write( "<div class=\"form-check\"><input class=\"checkbox\" type=\"checkbox\" value=\""+ tools + "\" id=\"id"+tools.substring(0, 4)+"\" disabled checked readonly>\n" +
-                                    "  <label for=\"id"+tools.substring(0, 4)+"\">\n" +
+                                    "  <label style=\"color: #789424; font-weight: bold;\" for=\"id"+tools.substring(0, 4)+"\">\n" +
                                     tools + "\n" +
                                     "  </label></div>");
                         }else{
