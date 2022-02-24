@@ -1,3 +1,12 @@
+@font-face {
+  font-family: Roboto;
+  src: url(roboto/Roboto-Light.ttf);
+}
+
+p, h1, label{
+    font-family: Roboto;
+}
+
 body{
     background: rgb(56,156,196);
     background: linear-gradient(124deg, rgba(56,156,196,1) 43%, rgba(33,71,167,1) 100%);
