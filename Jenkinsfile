@@ -12,7 +12,7 @@ pipeline {
                 // Get some code from a GitHub repository
                 sh "pwd"
                 sh "git clone 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git' temp"
-                sh "mv temp/* ."
+                sh "mv -n temp/* ."
                 sh "rm -rf temp"
 
                 // Run Maven on a Unix agent.
@@ -36,8 +36,8 @@ pipeline {
                 //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
                 
                 // Run Maven on a Unix agent.
-                sh "mvn clean"
-                //sh "sshpass -p \"root\" scp /var/lib/jenkins/workspace/Pipeline-MSPR/ root@192.168.1.170:/var/www/html"
+                //sh "mvn clean"
+                sh "sshpass -p \"root\" scp /var/lib/jenkins/workspace/Pipeline-MSPR/ root@192.168.1.170:/var/www/html"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
