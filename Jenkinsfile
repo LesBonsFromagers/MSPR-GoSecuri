@@ -59,7 +59,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
                 sh "pwd"
-                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'pwd; java -version; javac -version; mvn compile' "
+                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'pwd; java -version; javac -version; mvn compile /mnt/www/html/Pipeline-MSPR/' "
                 
                 //javac /mnt/www/html/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java; java /mnt/www/html/Pipeline-MSPR/target/classes/com/epsi/gosecuri/Main.class
                 
