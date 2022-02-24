@@ -82,6 +82,7 @@ pipeline {
                 //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
 
                 // Run Maven on a Unix agent.
+                sh "cd /root/"
                 sh "pdw"
                 sh "ls /mnt/www/html/"
 
