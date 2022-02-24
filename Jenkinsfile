@@ -10,7 +10,7 @@ pipeline {
         stage('Git') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
+                sh "git clone 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git' "
 
                 // Run Maven on a Unix agent.
                 
