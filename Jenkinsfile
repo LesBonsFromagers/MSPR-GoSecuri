@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    tools {
+    //tools {
         // Install the Maven version configured as "M3" and add it to the path.
-        maven "M3"
-    }
+        //maven "M3"
+    //}
 
     stages {
         stage('Git') {
@@ -58,7 +58,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
                 
-                sh "java /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Files.java"
+                sh "java /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java"
                 
                 //sh "rsync --rsh=\"sshpass -p \"root\" ssh -o StrictHostKeyChecking=no root@192.168.1.170 \" /root/.git/ /backup/"
 
