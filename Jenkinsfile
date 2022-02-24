@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Connect') {
+        stage('Git') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
@@ -25,7 +25,7 @@ pipeline {
             }
         }
         
-        stage('Package') 
+        stage('Copy') 
         {
             steps 
             {
@@ -34,6 +34,7 @@ pipeline {
                 
                 // Run Maven on a Unix agent.
                 sh "mvn clean"
+                //sh "sshpass -p \"root\" scp /root/.git/ root@192.168.1.170:/var/www/html"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
@@ -44,7 +45,7 @@ pipeline {
             }
         }
         
-        stage('Install') 
+        stage('Sauvegarde') 
         {
             steps 
             {
@@ -53,6 +54,8 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh "mvn clean"
+                
+                //sh "rsync --rsh=\"sshpass -p \"root\" ssh -o StrictHostKeyChecking=no root@192.168.1.170 \" /root/.git/ /backup/"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
