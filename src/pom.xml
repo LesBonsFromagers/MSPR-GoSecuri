@@ -18,8 +18,6 @@
                     <source>17</source>
                     <target>17</target>
                 </configuration>
-            </plugin>
-            <plugin>
                 <executions>
                     <execution>
                         <goals>
