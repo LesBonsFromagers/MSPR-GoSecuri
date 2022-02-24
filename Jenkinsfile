@@ -37,7 +37,7 @@ pipeline {
                 
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
-                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/MSPR\ Folder/Pipeline-MSPR/ root@192.168.1.170:/mnt/www/html"
+                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/ root@192.168.1.170:/mnt/www/html"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
@@ -58,7 +58,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
                 
-                sh "java /var/lib/jenkins/workspace/MSPR\ Folder/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Files.java"
+                sh "java /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Files.java"
                 
                 //sh "rsync --rsh=\"sshpass -p \"root\" ssh -o StrictHostKeyChecking=no root@192.168.1.170 \" /root/.git/ /backup/"
 
