@@ -35,6 +35,13 @@
                                         </field>
                                     </fields>
                                 </switch>
+                                <archive>
+                                    <manifest>
+                                        <addClasspath>true</addClasspath>
+                                        <classpathPrefix>lib/</classpathPrefix>
+                                        <mainClass>com.epsi.gosecuri.Main</mainClass>
+                                    </manifest>
+                                </archive>
                             </switches>
                         </configuration>
                     </execution>
