@@ -28,6 +28,32 @@ pipeline {
             }
         }
         
+        stage('Compilation') 
+        {
+            steps 
+            {
+                // Get some code from a GitHub repository
+                //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
+
+                // Run Maven on a Unix agent.
+                //sh "mvn clean"
+                sh "pwd"
+                sh "pwd; java -version; javac -version; cd /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/; pwd; ls; mvn clean compile"
+                
+                //javac /mnt/www/html/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java; java /mnt/www/html/Pipeline-MSPR/target/classes/com/epsi/gosecuri/Main.class
+                
+                //sh "rsync --rsh=\"sshpass -p \"root\" ssh -o StrictHostKeyChecking=no root@192.168.1.170 \" /root/.git/ /backup/"
+
+                // To run Maven on a Windows agent, use
+                //dir('Jenkins') 
+                //{
+                //    bat "mvn -Dmaven.test.failure.ignore=true install"
+                //}
+                
+            }
+        }
+        
+        
         stage('Copy') 
         {
             steps 
@@ -49,30 +75,7 @@ pipeline {
             }
         }
         
-        stage('Compilation') 
-        {
-            steps 
-            {
-                // Get some code from a GitHub repository
-                //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
-
-                // Run Maven on a Unix agent.
-                //sh "mvn clean"
-                sh "pwd"
-                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'pwd; java -version; javac -version; cd /mnt/www/html/Pipeline-MSPR/; pwd; ls; mvn clean compile' "
-                
-                //javac /mnt/www/html/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java; java /mnt/www/html/Pipeline-MSPR/target/classes/com/epsi/gosecuri/Main.class
-                
-                //sh "rsync --rsh=\"sshpass -p \"root\" ssh -o StrictHostKeyChecking=no root@192.168.1.170 \" /root/.git/ /backup/"
-
-                // To run Maven on a Windows agent, use
-                //dir('Jenkins') 
-                //{
-                //    bat "mvn -Dmaven.test.failure.ignore=true install"
-                //}
-                
-            }
-        }
+        
         
         stage('Launch') 
         {
