@@ -38,7 +38,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
                 sh "pwd"
-                sh "pwd; java -version; javac -version; cd /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/; pwd; ls; mvn clean compile"
+                sh "pwd; java -version; javac -version; cd /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/; pwd; ls; mvn -X clean compile"
                 
                 //javac /mnt/www/html/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java; java /mnt/www/html/Pipeline-MSPR/target/classes/com/epsi/gosecuri/Main.class
                 
