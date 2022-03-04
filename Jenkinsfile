@@ -40,7 +40,7 @@ pipeline {
                 sh "pwd"
                 sh "java -version"
                 sh "javac -version"
-                sh "cd /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/; pwd; ls; mvn -X clean compile"
+                sh "cd /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/; pwd; ls; mvn clean package"
                 
                 //javac /mnt/www/html/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java; java /mnt/www/html/Pipeline-MSPR/target/classes/com/epsi/gosecuri/Main.class
                 
