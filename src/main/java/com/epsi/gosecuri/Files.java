@@ -10,7 +10,7 @@ public class Files {
     private final Map<String, String> toolsList = new HashMap<>();
     private final List<Agent> agents = new ArrayList<>();
 
-    private final String path = "src/main/java/com/epsi/gosecuri/assets/";
+    private final String path = "/mnt/www/html/src/main/java/com/epsi/gosecuri/assets/";
     private final String Header = """
             <!doctype html>
             <html lang="fr">
@@ -134,7 +134,7 @@ public class Files {
         //String agentTools = getAgentData();
         for (Agent a : agents) {
             try{
-                new FileOutputStream(path+"web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html", false).close();
+                new FileOutputStream(path+"web/"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html", false).close();
                 FileWriter writeAgent = new FileWriter(path+"web/"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html");
                 writeAgent.write(Header);
                 writeAgent.write("<div><h1>"+ a.getSurname()+ " " + a.getName() +"</h1></div>" +
