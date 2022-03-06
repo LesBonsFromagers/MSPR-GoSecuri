@@ -44,7 +44,7 @@ public class Files {
     public void ReadStaffListFile(){
         try {
             System.out.println(new File("Pipeline-MSPR/staff.txt").getAbsolutePath());
-            System.out.println(new File(new File("staff.txt").getAbsolutePath()).exists());
+            System.out.println(new File("Pipeline-MSPR/staff.txt").exists());
             System.out.println(new File("staff.txt").isDirectory());
             System.out.println(new File("staff.txt").canRead());
             BufferedReader bufferedReader = new BufferedReader(new FileReader("./staff.txt"));
