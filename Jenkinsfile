@@ -78,7 +78,7 @@ pipeline {
         
         
         
-        stage('Copy') 
+        stage('Copy to Webserver') 
         {
             steps 
             {
@@ -101,7 +101,7 @@ pipeline {
         
         
         
-        stage('Launch') 
+        stage('Execute on Webserver') 
         {
             steps 
             {
