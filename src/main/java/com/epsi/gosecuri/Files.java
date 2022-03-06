@@ -44,7 +44,7 @@ public class Files {
     public void ReadStaffListFile(){
         try {
             System.out.println(new File(".").getAbsolutePath());
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"staff.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("staff.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
                 this.staffList.add(str);
@@ -57,7 +57,7 @@ public class Files {
 
     public void ReadToolsFile(){
         try{
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"liste.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("liste.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
                 this.toolsList.put(str.split("\t")[0], str.split("\t")[1]);
@@ -78,7 +78,7 @@ public class Files {
         for (String a : staffList){
             try{
                 toolsListAgent = new ArrayList<>();
-                BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"agents\\" + a + ".txt"));
+                BufferedReader bufferedReader = new BufferedReader(new FileReader("agents\\" + a + ".txt"));
                 int i = 1;
                 String str;
                 while((str = bufferedReader.readLine()) != null){
