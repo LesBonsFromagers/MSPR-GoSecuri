@@ -110,7 +110,7 @@ pipeline {
                 //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
 
                 // Run Maven on a Unix agent.
-                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'cd /mnt/www/html/; chmod 777 /mnt/www/html/Pipeline-MSPR/ pwd; java -jar Pipeline-MSPR/target/untitled104-1.0-SNAPSHOT.jar'"
+                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'cd /mnt/www/html/; chmod 777 -R /mnt/www/html/Pipeline-MSPR/; pwd; java -jar Pipeline-MSPR/target/untitled104-1.0-SNAPSHOT.jar'"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
