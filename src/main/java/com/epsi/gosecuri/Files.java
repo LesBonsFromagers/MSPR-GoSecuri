@@ -43,8 +43,6 @@ public class Files {
 
     public void ReadStaffListFile(){
         try {
-            System.out.println(new File(path + "staff.txt").getAbsoluteFile());
-            System.out.println(new File(path + "staff.txt").exists());
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"staff.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
@@ -85,7 +83,6 @@ public class Files {
                 while((str = bufferedReader.readLine()) != null){
                     if (!str.isEmpty()){
 
-                        System.out.println(str);
                         if (i == 1){
                             name = str;
                         }else if (i == 2){
@@ -136,6 +133,7 @@ public class Files {
         //String agentTools = getAgentData();
         for (Agent a : agents) {
             try{
+                System.out.println(a.getPhoto());
                 new FileOutputStream(path+"web/"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html", false).close();
                 FileWriter writeAgent = new FileWriter(path+"web/"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html");
                 writeAgent.write(Header);
