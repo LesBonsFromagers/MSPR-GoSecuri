@@ -44,6 +44,9 @@ public class Files {
     public void ReadStaffListFile(){
         try {
             System.out.println(new File(".").getAbsolutePath());
+            System.out.println(new File(".").exists());
+            System.out.println(new File(".").isDirectory());
+            System.out.println(new File(".").canRead());
             BufferedReader bufferedReader = new BufferedReader(new FileReader("./staff.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
