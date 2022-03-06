@@ -70,7 +70,7 @@ pipeline {
         stage('Copy to RAID 2') {
             steps {
                 sh "pwd"
-                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/target/untitled104-1.0-SNAPSHOT.jar root@192.168.1.70:/srv/dev-disk-by-uuid-16a00318-cf99-4508-8dba-aad24734649b/RAIDmspr/Compiled"
+                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/target/untitled104-1.0-SNAPSHOT.jar root@192.168.1.70:/srv/dev-disk-by-uuid-16a00318-cf99-4508-8dba-aad24734649b/RAIDmspr/Compiled"
                 
             }
         }
@@ -88,7 +88,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
                 sh "pwd"
-                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/target/untitled104-1.0-SNAPSHOT.jar root@192.168.1.170:/mnt/www/html"
+                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/ root@192.168.1.170:/mnt/www/html"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
@@ -109,7 +109,7 @@ pipeline {
                 //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
 
                 // Run Maven on a Unix agent.
-                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'cd /mnt/www/html/; pwd; java -jar untitled104-1.0-SNAPSHOT.jar'"
+                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'cd /mnt/www/html/; pwd; java -jar Pipeline-MSPR/target/untitled104-1.0-SNAPSHOT.jar'"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
