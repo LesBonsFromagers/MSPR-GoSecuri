@@ -40,6 +40,7 @@ pipeline {
                 sh "pwd"
                 sh "java -version"
                 sh "javac -version"
+                sh "mvn -v"
                 sh "cd /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/; pwd; ls; mvn clean package"
                 
                 //javac /mnt/www/html/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java; java /mnt/www/html/Pipeline-MSPR/target/classes/com/epsi/gosecuri/Main.class
@@ -66,7 +67,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "mvn clean"
                 sh "pwd"
-                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/ root@192.168.1.170:/mnt/www/html"
+                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/untitled104-1.0-SNAPSHOT.jar root@192.168.1.170:/mnt/www/html"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
@@ -87,7 +88,7 @@ pipeline {
                 //git 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git'
 
                 // Run Maven on a Unix agent.
-                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'cd /var/www/html/Pipeline-MSPR/; pwd; java -jar target/untitled104-1.0-SNAPSHOT.jar'"
+                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'cd /mnt/www/html/; pwd; java -jar untitled104-1.0-SNAPSHOT.jar'"
 
                 // To run Maven on a Windows agent, use
                 //dir('Jenkins') 
