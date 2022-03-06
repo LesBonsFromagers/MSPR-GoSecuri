@@ -10,7 +10,7 @@ public class Files {
     private final Map<String, String> toolsList = new HashMap<>();
     private final List<Agent> agents = new ArrayList<>();
 
-    private final String path = "src\\main\\java\\com\\epsi\\gosecuri\\assets\\";
+    private final String path = "src/main/java/com/epsi/gosecuri/assets/";
     private final String Header = """
             <!doctype html>
             <html lang="fr">
@@ -77,7 +77,7 @@ public class Files {
         for (String a : staffList){
             try{
                 toolsListAgent = new ArrayList<>();
-                BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"agents\\" + a + ".txt"));
+                BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"agents/" + a + ".txt"));
                 int i = 1;
                 String str;
                 while((str = bufferedReader.readLine()) != null){
@@ -119,8 +119,8 @@ public class Files {
     public void CreateIndex(){
         String agentsList = getAgentListNames();
         try{
-            new FileOutputStream(path+"web\\index.html", false).close();
-            FileWriter writeIndex = new FileWriter(path+"web\\index.html");
+            new FileOutputStream(path+"web/index.html", false).close();
+            FileWriter writeIndex = new FileWriter(path+"web/index.html");
             writeIndex.write(Header);
             writeIndex.write(agentsList);
             writeIndex.write(Footer);
@@ -135,7 +135,7 @@ public class Files {
         for (Agent a : agents) {
             try{
                 new FileOutputStream(path+"web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html", false).close();
-                FileWriter writeAgent = new FileWriter(path+"web\\"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html");
+                FileWriter writeAgent = new FileWriter(path+"web/"+ (a.getSurname().charAt(0)+a.getName()).toLowerCase() +".html");
                 writeAgent.write(Header);
                 writeAgent.write("<div><h1>"+ a.getSurname()+ " " + a.getName() +"</h1></div>" +
                                  "<div><p>Mission : "+ a.getAssignment() + "</p></div>" +
