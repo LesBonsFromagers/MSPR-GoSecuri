@@ -1,10 +1,9 @@
 package com.epsi.gosecuri;
 
 import org.apache.commons.codec.digest.DigestUtils;
-
 import java.io.*;
 import java.util.*;
-import java.util.stream.BaseStream;
+
 
 public class Files {
     private final List<String> staffList = new ArrayList<>();
@@ -102,7 +101,7 @@ public class Files {
                 bufferedReader.close();
                 Agent agent = new Agent(name, surname, pwd, assignment, toolsListAgent);
                 agents.add(agent);
-                CreateHtpasswd(agent);
+                //CreateHtpasswd(agent);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -164,7 +163,7 @@ public class Files {
             }
         }
     }
-    public void CreateHtpasswdAdmin(){
+    /*public void CreateHtpasswdAdmin(){
         String str = "admin:{SHA}"+ Base64.getEncoder().encodeToString(DigestUtils.sha1("admin1234"));
         try {
             new FileOutputStream(".htpasswd", false).close();
@@ -187,5 +186,5 @@ public class Files {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
