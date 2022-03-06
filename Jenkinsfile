@@ -52,7 +52,7 @@ pipeline {
                 sh "java -version"
                 sh "javac -version"
                 sh "mvn -v"
-                sh "cd /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/; pwd; ls; mvn clean package"
+                sh "cd /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/; chmod -R 777 /var/lib/jenkins/workspace/MSPRFolder/; pwd; ls; mvn clean package"
                 
                 //javac /mnt/www/html/Pipeline-MSPR/src/main/java/com/epsi/gosecuri/Main.java; java /mnt/www/html/Pipeline-MSPR/target/classes/com/epsi/gosecuri/Main.class
                 
