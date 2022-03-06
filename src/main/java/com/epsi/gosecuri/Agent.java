@@ -16,7 +16,7 @@ public class Agent {
         this.password = password;
         this.assignment = assignment;
         this.toolsList = toolsList;
-        this.photo = surname.charAt(0) + name + ".jpg";
+        this.photo = (surname.charAt(0) + name + ".jpg").toLowerCase();
     }
     public String getName() {
         return name;
