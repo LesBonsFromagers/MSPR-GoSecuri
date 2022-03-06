@@ -43,6 +43,8 @@ public class Files {
 
     public void ReadStaffListFile(){
         try {
+            System.out.println(new File(path + "staff.txt").getAbsoluteFile());
+            System.out.println(new File(path + "staff.txt").exists());
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path+"staff.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
