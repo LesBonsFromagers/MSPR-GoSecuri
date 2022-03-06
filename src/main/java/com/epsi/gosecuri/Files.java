@@ -10,7 +10,7 @@ public class Files {
     private final Map<String, String> toolsList = new HashMap<>();
     private final List<Agent> agents = new ArrayList<>();
 
-    private final String path = "src\\main\\java\\com\\epsi\\gosecuri\\assets\\";
+    private final String path = "Pipeline-MSPR\\src\\main\\java\\com\\epsi\\gosecuri\\assets\\";
     private final String Header = """
             <!doctype html>
             <html lang="fr">
@@ -43,11 +43,7 @@ public class Files {
 
     public void ReadStaffListFile(){
         try {
-            System.out.println(new File("Pipeline-MSPR/staff.txt").getAbsolutePath());
-            System.out.println(new File("Pipeline-MSPR/staff.txt").exists());
-            System.out.println(new File("staff.txt").isDirectory());
-            System.out.println(new File("staff.txt").canRead());
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("./staff.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("Pipeline-MSPR/staff.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
                 this.staffList.add(str);
@@ -60,7 +56,7 @@ public class Files {
 
     public void ReadToolsFile(){
         try{
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("liste.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("Pipeline-MSPR/liste.txt"));
             String str;
             while ((str = bufferedReader.readLine()) != null){
                 this.toolsList.put(str.split("\t")[0], str.split("\t")[1]);
