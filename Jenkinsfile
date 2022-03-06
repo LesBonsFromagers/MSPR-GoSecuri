@@ -11,7 +11,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 sh "pwd"
-                sh "rm -rvf /var/lib/jenkins/workspace/MSPRFolder/Pipeline-MSPR/"
+                sh "sshpass -v -p \"root\" ssh -v -o \"StrictHostKeyChecking=no\" root@192.168.1.170 'rm -rvf /mnt/www/html/Pipeline-MSPR/'"
                 sh "git clone 'https://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@github.com/LesBonsFromagers/MSPR-GoSecuri.git' temp"
                 sh "mv -n temp/* ."
                 sh "rm -rf temp"
