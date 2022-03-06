@@ -31,7 +31,7 @@ pipeline {
         stage('Copy to RAID') {
             steps {
                 sh "pwd"
-                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/ root@192.168.1.70:/srv/dev-disk-by-uuid-16a00318-cf99-4508-8dba-aad24734649b/RAIDmspr/"
+                sh "sshpass -v -p \"root\" scp -v -o \"StrictHostKeyChecking=no\" -r /var/lib/jenkins/workspace/MSPRFolder/ root@192.168.1.70:/srv/dev-disk-by-uuid-16a00318-cf99-4508-8dba-aad24734649b/RAIDmspr/"
                 
             }
         }
