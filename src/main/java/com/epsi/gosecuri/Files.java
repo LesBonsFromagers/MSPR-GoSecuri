@@ -113,7 +113,7 @@ public class Files {
                 Agent agent = new Agent(name, surname, pwd, assignment, toolsListAgent);
                 agents.add(agent);
                 // Create the Password for the .htpassword
-                CreateHtpasswd(agent);
+                //CreateHtpasswd(agent);
             } catch (IOException e) {
                 e.printStackTrace();
             }
