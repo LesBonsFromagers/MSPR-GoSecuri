@@ -194,35 +194,35 @@ public class Files {
         }
     }
 
-    /**
-     * Create the .htpasswd with the admin logs
-     */
-    public void CreateHtpasswdAdmin(){
-        String str = "admin:{SHA}"+ Base64.getEncoder().encodeToString(DigestUtils.sha1("admin"));
-        try {
-            new FileOutputStream(".htpasswd", false).close();
-            BufferedWriter writeHtpasswd = new BufferedWriter(new FileWriter(".htpasswd",true));
-            writeHtpasswd.write(str);
-            writeHtpasswd.newLine();
-            writeHtpasswd.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Create the password for each agent
-     * @param a -> an agent
-     */
-    public void CreateHtpasswd(Agent a){
-        String str = (a.getSurname().charAt(0)+a.getName()).toLowerCase()+":{SHA}"+ Base64.getEncoder().encodeToString(DigestUtils.sha1(a.getPassword()));
-        try {
-            BufferedWriter writeHtpasswd = new BufferedWriter(new FileWriter(".htpasswd",true));
-            writeHtpasswd.write(str);
-            writeHtpasswd.newLine();
-            writeHtpasswd.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    /**
+//     * Create the .htpasswd with the admin logs
+//     */
+//    public void CreateHtpasswdAdmin(){
+//        String str = "admin:{SHA}"+ Base64.getEncoder().encodeToString(DigestUtils.sha1("admin"));
+//        try {
+//            new FileOutputStream(".htpasswd", false).close();
+//            BufferedWriter writeHtpasswd = new BufferedWriter(new FileWriter(".htpasswd",true));
+//            writeHtpasswd.write(str);
+//            writeHtpasswd.newLine();
+//            writeHtpasswd.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    /**
+//     * Create the password for each agent
+//     * @param a -> an agent
+//     */
+//    public void CreateHtpasswd(Agent a){
+//        String str = (a.getSurname().charAt(0)+a.getName()).toLowerCase()+":{SHA}"+ Base64.getEncoder().encodeToString(DigestUtils.sha1(a.getPassword()));
+//        try {
+//            BufferedWriter writeHtpasswd = new BufferedWriter(new FileWriter(".htpasswd",true));
+//            writeHtpasswd.write(str);
+//            writeHtpasswd.newLine();
+//            writeHtpasswd.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
